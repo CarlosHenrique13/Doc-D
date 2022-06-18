@@ -1,0 +1,225 @@
+* {
+    /* BODY */
+    
+        /* Fontes */
+        font-family: Arial, Helvetica, sans-serif;
+        /* Cores */
+        --pre-bg: #6d676e;
+        --pre-txt: white;
+        --code-bg: #f2f1f1;
+        /* Divisor de Pagina */
+        --hr-altura: 2px;
+
+
+    /* Menu Principal */
+        /* Cores*/
+        --menu-hg-bg: #1B1B1E; /* background */
+        --menu-link: #28AFB0; /* Texto do Link */
+        --menu-link-hover: ; /* Ao Passar o Mouse  ? */
+        --menu-link-opac: ; /* Fundo do Texto do Link ? */
+        /* Redimensionamento */
+        --menu-hg: 100px; /* Altura */
+
+    /* Menu Lateral*/
+        /* Cores*/
+        --menu-lt-bg: #F7ECE1; /* background do Menu */
+        --menu-lt-link: #28AFB0; /* Texto do Link */
+        --menu-lt-link-hover: black; /* Passa o Mouse Texto do Link   ?*/
+        --menu-lt-barra: #6d676e; /* background do Link*/
+        --menu-lt-barra-hove:#d5d0d6; /* Passa o Mouse trocar o background do Link */
+        /* Redimensionamento */
+        --menu-lt-hg:20%; /* Tamanho da Lateral*/
+
+    /* Seção Main*/
+        /* Cores */
+        --main-bg: white; /* Background */
+        /* Redimensionamento */
+        --main-wd: 78%; /* Tamanho */
+
+    /* Footer */
+        /* Cores */
+        --footer-bg: #6D676E;
+        /* Redimensionamento */
+        --footer-hg: 100px;
+
+
+}
+/* Corpo / Geral */
+body{
+    margin: 0;
+    display: inline-block; 
+    min-width: var(--minimo-width);
+}
+hr {
+    padding: 0;
+    border: solid var(--hr-altura) black;
+}
+div#corpo {
+    display: inline-block; 
+}
+p {
+    margin-bottom: 2px;
+    padding-right: 5px;
+    text-align: justify;
+}
+p + p {
+    text-indent: 1.5em;
+    margin-top: 0;
+    text-align: justify;
+}
+/* Adição de Codigo */
+pre {
+    margin: 0;
+    padding: 0;
+    width: 80%;
+    border-radius: 10px;
+    color: var(--pre-txt);
+    background-color: var(--pre-bg);
+}
+pre > div#copy {
+    width: 100%;
+    text-align: right;
+    vertical-align: top;
+    background-color: red;
+}
+pre > div#copy button{
+    text-align: right;
+}
+code {
+    margin-bottom: 2px;
+    padding: 3px;
+    border-radius: 3px;
+    background-color: var(--code-bg);
+}
+
+
+/* Header */
+.header {
+    width: 100%;
+    display: inline-block;
+    max-height: var(--menu-hg);
+    background-color: var(--menu-hg-bg);
+}
+.header > p {
+    padding-left: 2%;
+}
+/* Header > Logo */
+.header > div#logo {
+    width: 20%;
+    float: left;
+    height: var(--menu-hg);
+}
+.header > div#logo > a > img {
+    max-width: 100%;
+    padding-top: 3%;
+    height: calc(var(--menu-hg) - 20%);
+}
+header > div#logo > a {
+    padding-left: 3%;
+    text-decoration: none;
+}
+/* Header > Menu Principal */
+.header > nav {
+    width: 80%;
+    float: right;
+    text-align: right;
+    font-size: x-large;
+    height: var(--menu-hg);
+}
+.header > nav > li {
+    padding-top: 3%;
+    padding-right: 3%;
+    display: inline-block;
+}
+.header > nav > li  a {
+    text-decoration: none;
+    color: var(--menu-link);
+}
+.header > nav  li  ul{
+    margin:0;
+    display:none;
+    padding-left: 2%;
+    padding-right: 2%;
+    position:absolute;
+    list-style: none;    
+    background-color: var(--menu-hg-bg);
+}
+.header > nav li ul li:hover{ background-color: var(--menu-link);}
+.header > nav li:hover ul, .menu-lateral li.over ul{ display:block;}
+
+
+/* Menu Lateral */
+.menu-lateral {
+    width: var(--menu-lt-hg);
+    float: left;
+    text-align: center;
+    background-color: var(--menu-lt-bg);
+}
+/* Imagem de Logo do Menu Lateral*/
+.menu-lateral > img{
+    width: 80%;
+    padding-top: 2%;
+    text-align: center;
+    border-radius: 50%;
+}
+/* Menu Lateral > Menu */
+.menu-lateral > div{
+    width: 100%;
+    text-align: left;
+    list-style: none;
+    margin-bottom: 20px;
+    background-color: var(--menu-lt-barra);
+}
+/* Icone No Menu*/
+.menu-lateral > div img {
+    width: 10%;
+    margin-right: 5px;
+    border-radius: 50%;
+}
+.menu-lateral > div > li {
+    padding: 3px;
+    list-style: none;
+    padding-left: 10px;
+    position: relative;
+}
+.menu-lateral  div  li  a{
+    text-decoration: none;
+    color: var(--menu-lt-link);
+}
+.menu-lateral > div > li:hover, .menu-lateral > a:hover{
+    font-weight: bold;
+    text-shadow: 2px 1px var(--menu-lt-link-hover);
+    background-color: var(--menu-lt-barra-hove);
+}
+/* Menu Lateral > Menu > Sub Menu */
+.menu-lateral > div > li > ul{
+    margin:0;
+    display:none;
+    padding-left: 10px;
+    position:relative;
+    font-weight: normal;
+    list-style: none;
+    background-color: var(--menu-lt-barra-hove);
+}
+.menu-lateral > div > li > ul > li{ padding-left: 10px;}
+.menu-lateral > div > li > ul > li:hover{ background-color: var(--menu-lt-barra);}
+.menu-lateral > div > li:hover > ul, .menu-lateral li.over > ul{ display:block;}
+
+
+/* Secção Main*/
+.main {
+    width: var(--main-wd);
+    padding-left: 2%;
+    float: right;
+    background-color: var(--main-bg);
+}
+
+
+/* Footer */
+.footer {
+    bottom: 0;
+    height: var(--footer-hg);
+    width: 100%;
+    background-color: var(--footer-bg);
+}
+
